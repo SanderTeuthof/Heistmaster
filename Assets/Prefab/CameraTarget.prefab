@@ -102,6 +102,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4913507293436882513}
   - component: {fileID: 7034632002484625682}
+  - component: {fileID: 1043714414709304829}
+  - component: {fileID: 6264949179915678033}
+  - component: {fileID: 6317908715131639806}
   m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
@@ -145,3 +148,83 @@ MonoBehaviour:
     useConstant: 0
     constantValue: 0
     variable: {fileID: 11400000, guid: eab08310c32c98448beceb46f1e123a5, type: 2}
+--- !u!114 &1043714414709304829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030630345754105258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5115597230eb2524ebafcec0be0a61e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7cca38a1cd3e2c540b25c656d28a83b7, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7034632002484625682}
+        m_TargetAssemblyTypeName: CameraTargetPosition, Assembly-CSharp
+        m_MethodName: AddCameraTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6264949179915678033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030630345754105258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5115597230eb2524ebafcec0be0a61e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7c711e219f34dc942ab0a0fad4fd5437, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7034632002484625682}
+        m_TargetAssemblyTypeName: CameraTargetPosition, Assembly-CSharp
+        m_MethodName: RemoveCameraTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6317908715131639806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030630345754105258}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6a4ebdd7f462048a4b3af31017d9d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sensitivity:
+    useConstant: 0
+    constantValue: 2
+    variable: {fileID: 11400000, guid: bd630c53a658d5747be35d1b9c8f68b7, type: 2}
+  _yRotationLimit:
+    useConstant: 0
+    constantValue: 10
+    variable: {fileID: 11400000, guid: d357ed9719f2a154db19056ea53fd426, type: 2}
+  _xRotationLimit:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: 8105f2c2583d27b4b850b7b437cd3dcc, type: 2}

@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/CameraFocusOnMultipleThings.unity
+    guid: 1d95fd6e0308ce146a54c19abe537a96
+  - enabled: 1
+    path: Assets/Scenes/GrabObject.unity
+    guid: 329332386bd66fe428d412b2178157a2
+  - enabled: 1
+    path: Assets/Scenes/SpyCameraRecognition.unity
+    guid: 79ace8ce11246dd4589210f1be88dc7e
+  - enabled: 1
+    path: Assets/Scenes/HubWorld.unity
+    guid: 951fe3351c87f274bbed47b26ad55e56
+  - enabled: 1
+    path: Assets/Scenes/MuseumLevelPrototype.unity
+    guid: e06d329a6ed21dc48a3cfc191066ec27
   m_configObjects: {}

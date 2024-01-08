@@ -17,14 +17,18 @@ public class PlayerMovement : MonoBehaviour
     private Camera _camera;
 
     private Vector3 _movement = Vector3.zero;
-    private Vector3 _previouMovement = Vector3.zero;
 
     private bool _grounded;
+    private bool _usingController;
+
+    private const string _horizontalMovement = "Horizontal";
+    private const string _verticalMovement = "Vertical";
 
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
         _camera = Camera.main;
+        _usingController = false;
     }
 
     private void Update()
@@ -32,7 +36,8 @@ public class PlayerMovement : MonoBehaviour
         CheckIfGrounded();
 
         CalculateMovementInput();
-        RotateCharacterToWalkDirection();
+        RotateCharacterTowardsCursor();
+        //RotateCharacterToWalkDirection();
         ApplyGraity();
 
         MovePlayer();
@@ -73,10 +78,64 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void RotateCharacterTowardsCursor()
+    {
+        if (_usingController)
+        {
+            // Use controller right stick input for rotation
+            float horizontalInput = Input.GetAxis("LookX");
+            float verticalInput = Input.GetAxis("LookY");
+
+            Vector3 controllerDirection = new Vector3(horizontalInput, 0f, verticalInput);
+            if (controllerDirection.magnitude > 0.1f)
+            {
+                Debug.Log(controllerDirection);
+                // Calculate the target rotation based on the controller input
+                Quaternion targetRotation = Quaternion.LookRotation(controllerDirection, Vector3.up);
+
+                // Smoothly interpolate between the current rotation and the target rotation
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed.value * Time.deltaTime);
+            }
+        }
+        else
+        {
+            // Use mouse input for rotation
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 targetPosition = hit.point;
+                targetPosition.y = transform.position.y; // Keep the same y-coordinate as the player
+
+                // Calculate the target rotation based on the direction towards the cursor
+                Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
+
+                // Smoothly interpolate between the current rotation and the target rotation
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed.value * Time.deltaTime);
+            }
+        }
+    }
+
+    private bool IsUsingController()
+    {
+        string[] joystickNames = Input.GetJoystickNames();
+
+        for (int i = 0; i < joystickNames.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(joystickNames[i]))
+            {
+                // Joystick is connected
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void MovePlayer()
     {
         _characterController.Move(_movement * Time.deltaTime);
-        _previouMovement = _movement;
         _movement = Vector3.zero;
     }
 
@@ -88,13 +147,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 cameraSidewards = Vector3.Cross(cameraForward, Vector3.up).normalized;
 
-        float horizontalInput = -Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = -Input.GetAxis(_horizontalMovement);
+        float verticalInput = Input.GetAxis(_verticalMovement);
 
         _movement += (cameraForward * verticalInput + cameraSidewards * horizontalInput) * _movementSpeed.value;        
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         Rigidbody otherRigidbody = other.GetComponent<Collider>().attachedRigidbody;
 
@@ -105,5 +164,24 @@ public class PlayerMovement : MonoBehaviour
 
             otherRigidbody.AddForce(force, ForceMode.Force);
         }
+    }*/
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody rb = hit.collider.attachedRigidbody;
+
+        if(rb != null)
+        {
+            Vector3 forceDirection = hit.transform.position - transform.position; 
+            forceDirection.y = 0;
+            forceDirection = forceDirection.normalized;
+
+            rb.AddForceAtPosition(forceDirection * _pushForce.value, transform.position, ForceMode.Impulse);
+        }
+    }
+
+    public void SwitchControllerInput()
+    {
+        _usingController = !_usingController;
     }
 }

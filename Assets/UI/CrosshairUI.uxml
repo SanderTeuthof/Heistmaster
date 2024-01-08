@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="HorizontalLine" style="flex-grow: 1; width: 2%; height: 0.2%; position: absolute; left: 49%; top: 49.8%; background-color: rgba(0, 0, 0, 0.67);" />
+    <ui:VisualElement name="VerticalLine" style="flex-grow: 1; width: 0.1%; height: 3%; position: absolute; left: 49.9%; top: 48.5%; background-color: rgba(0, 0, 0, 0.67);" />
+</ui:UXML>

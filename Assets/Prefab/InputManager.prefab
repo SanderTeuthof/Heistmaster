@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2445575532858337430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56452739265240319}
+  - component: {fileID: 4340789819236513438}
+  - component: {fileID: 6739119521030521788}
+  - component: {fileID: 935661563253471259}
+  - component: {fileID: 6874010476375943571}
+  - component: {fileID: 7612503527939463432}
+  - component: {fileID: 4721385126494839779}
+  - component: {fileID: 4480074840741371569}
+  - component: {fileID: 8673796928561716511}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &56452739265240319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.217605, y: -1.2278726, z: -8.977859}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4340789819236513438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: Fire1
+  ButtonPressed: {fileID: 11400000, guid: 0c331bb6f106bcf4ab7bd0b04cb03e24, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: a102adc93bd537c4d9e3e8242c2edb40, type: 2}
+--- !u!114 &6739119521030521788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: Jump
+  ButtonPressed: {fileID: 11400000, guid: bb97d8a4acec4e14396dc2d8e5ba2036, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: ee6e59c1d63b95c458b445bcb82cb807, type: 2}
+--- !u!114 &935661563253471259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: Fire2
+  ButtonPressed: {fileID: 11400000, guid: f10bf1eee4879de49b9af586cb2a82f8, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: 0939394f3d7d30641ae07790358df20a, type: 2}
+--- !u!114 &6874010476375943571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: Fire3
+  ButtonPressed: {fileID: 11400000, guid: 9917fb6cab6f44643bd13c2e25c90a2f, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: 318f66d7e8be7aa488796a12d18a5d82, type: 2}
+--- !u!114 &7612503527939463432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: Return
+  ButtonPressed: {fileID: 11400000, guid: 7a75055e29439294d85ff561527a8f68, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: 7a75055e29439294d85ff561527a8f68, type: 2}
+--- !u!114 &4721385126494839779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: Submit
+  ButtonPressed: {fileID: 11400000, guid: 457a763391018a2448828075d63bdd23, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: c2058cf31d08f814c95966262e399a41, type: 2}
+--- !u!114 &4480074840741371569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: Confirm
+  ButtonPressed: {fileID: 11400000, guid: 318a12ddb725d6c48b54bd170ad5d066, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: 75682c69a5f8ec447ae61c19e8c8db34, type: 2}
+--- !u!114 &8673796928561716511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445575532858337430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb90c4b63a847254b9eb820f69fc2560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputToTriggerEvent: SwitchController
+  ButtonPressed: {fileID: 11400000, guid: 0358b7efca612a3438a5afd3bcaaba6f, type: 2}
+  ButtonReleased: {fileID: 11400000, guid: f1e564e3dae97114e87aa59271a7fba8, type: 2}
